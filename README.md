@@ -23,7 +23,7 @@ This is a simple e-commerce platform that allows users to browse products, add i
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/ecommerce-platform.git
+   git clone https://github.com/Navneeth18/E-commerce-Platform.git
    ```
 2. Navigate to the project directory:
    ```bash
