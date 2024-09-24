@@ -30,6 +30,11 @@ This is a simple e-commerce platform that allows users to browse products, add i
    cd ecommerce-platform
    ```
 3. Open `index.html` in your browser to view the platform.
+4. ![Screenshot 2024-09-25 000505](https://github.com/user-attachments/assets/b9aac479-35c5-4ea2-9560-e7dca24b5a5a)
+![Screenshot 2024-09-25 000950](https://github.com/user-attachments/assets/fba9557b-f372-4b22-b17d-9ba40151c8a2)
+![Screenshot 2024-09-25 000606](https://github.com/user-attachments/assets/943acb7a-7d11-479a-8c8c-dafb1eed6d25)
+![Screenshot 2024-09-25 001115](https://github.com/user-attachments/assets/9e5dabaa-54b3-4729-92e7-8491f9852093)
+
 
 ## Project Structure
 
