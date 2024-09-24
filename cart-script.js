@@ -1,6 +1,8 @@
 let products = [];
 let cart = [];
 let totalMRP = 0;
+let coupon = 0;
+
 
 // Fetch products from Fake Store API
 fetch('https://fakestoreapi.com/products')
@@ -37,7 +39,6 @@ function displayProducts(products) {
 function addToCart(id) {
     const product = products.find(prod => prod.id === id);
     const cartItem = cart.find(item => item.id === id);
-
     if (cartItem) {
         cartItem.quantity++;
     } else {
@@ -51,16 +52,17 @@ function updateCart() {
     const cartContainer = document.getElementById('cart');
     const totalMrpEl = document.getElementById('total-mrp');
     const totalAmountEl = document.getElementById('total-amount');
-
+    const couponcontainer = document.getElementById('coupon-price');
     cartContainer.innerHTML = '';
     totalMRP = 0;
-
+   
+    
     cart.forEach(item => {
         totalMRP += item.price * item.quantity;
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-            <!--<img src="${item.image}" alt="${item.title}">--!>
+           
             <div class="cart-price">
                 <img src="${item.image}" alt="${item.title}">
                 <div class="cart-body">
@@ -76,7 +78,7 @@ function updateCart() {
                     <button onclick="increaseQuantity(${item.id})">+</button>
                 </div>
                 <div>
-                    <button onclick="removeFromCart(${item.id})">Remove</button>
+                    <button class="remove-button" onclick="removeFromCart(${item.id})">Remove</button>
                 </div>
                 
                 
@@ -84,9 +86,14 @@ function updateCart() {
         `;
         cartContainer.appendChild(cartItem);
     });
-
+    if(totalMRP <= 50){ //i am assuming like if total MRP of items is greater than 50 rupees then only the coupon is applied orelse coupon price is 0
+        coupon = 0;        //or else there wont be any kind of profit for the platform
+    }else{
+        coupon = 50;
+    }
+    couponcontainer.innerHTML = `₹${coupon}`;
     totalMrpEl.innerText = `₹${totalMRP}`;
-    const totalAmount = totalMRP + 20 + 10 - 50;
+    const totalAmount = totalMRP + 20 + 10 - coupon;
     totalAmountEl.innerText = `₹${totalAmount}`;
 }
 
@@ -115,10 +122,29 @@ function removeFromCart(id) {
 }
 
 // Search functionality
-document.getElementById('search').addEventListener('input', function(event) {
+document.getElementById('search').addEventListener('input', function(event) { 
     const searchTerm = event.target.value.toLowerCase();
     const filteredProducts = products.filter(product => 
         product.title.toLowerCase().includes(searchTerm)
     );
     displayProducts(filteredProducts);
 });
+
+
+// pop up functionality
+document.getElementById('place-order').addEventListener('click', function() {
+//    show
+    document.getElementById('popup').style.display = 'block';
+    
+// background overlay
+    document.body.classList.add('show-popup');
+  });
+  
+  document.getElementById('closeButton').addEventListener('click', function() {
+// hide
+    document.getElementById('popup').style.display = 'none';
+    
+// remove
+    document.body.classList.remove('show-popup');
+  });
+  

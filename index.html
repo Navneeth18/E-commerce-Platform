@@ -7,28 +7,32 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
+    <header>
+        <h1>E-Commerce Platform</h1>
+        <input type="text" id="search" placeholder="Search for products..." />
+    </header>
     <div class="container">
-        <header>
-            <h1>E-Commerce Platform</h1>
-            <input type="text" id="search" placeholder="Search for products..." />
-        </header>
-
+       
         <section class="products" id="products"></section>
-
-        <div class="cart-section">
-            <h2>Cart</h2>
-            <div id="cart"></div>
-            <div class="price-details" id="price-details">
-                <h3>Price Details</h3>
-                <p>Total MRP: <span id="total-mrp">₹0</span></p>
-                <p>Coupon Discount: ₹50</p>
-                <p>Platform Fee: ₹10</p>
-                <p>Shipping Charges: ₹20</p>
-                <p>Total Amount: <span id="total-amount">₹0</span></p>
-                <button id="place-order">Place Order</button>
+            <div class="cart-title"> <h2>Cart</h2></div>
+            <div class="cart-section">
+                
+                <div id="cart"></div>
+                <div class="price-details" id="price-details">
+                    <h3>Price Details</h3>
+                    <p>Total MRP: <span id="total-mrp">₹0</span></p>
+                    <p>Coupon Discount: <span id="coupon-price">₹0</span></p>
+                    <p>Platform Fee: ₹10</p>
+                    <p>Shipping Charges: ₹20</p>
+                    <p>Total Amount: <span id="total-amount">₹0</span></p>
+                    <button id="place-order">Place Order</button>
+                    <div id="popup" class="popup">
+                        <p>Order placed successfully!</p>
+                        <button id="closeButton">Close</button>
+                    </div>
+                </div>
             </div>
-        </div>
+       
     </div>
 
     <script src="./cart-script.js"></script>
