@@ -50,6 +50,3 @@ This is a simple e-commerce platform that allows users to browse products, add i
 - Review the total amount, including discounts, fees, and shipping charges.
 - Click "Place Order" to finalize the purchase, and a confirmation popup will appear.
 
-## License
-
-This project is open-source and available under the MIT License.
