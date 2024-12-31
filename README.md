@@ -1,6 +1,8 @@
 
 # E-Commerce Platform
 
+## Ckeckout the project through link below
+   [Click Here](https://navneeth18.github.io/E-commerce-Platform/)
 ## Overview
 
 This is a simple e-commerce platform that allows users to browse products, add items to a shopping cart, and place orders. It is built using HTML, CSS, and JavaScript, with data fetched from the Fake Store API. The platform features product display, search functionality, shopping cart management, and an order placement popup.
